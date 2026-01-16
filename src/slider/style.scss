@@ -1,0 +1,50 @@
+@import "@splidejs/splide/css";
+
+.wp-block-kuestenkrieger-slider {
+	margin: 0;
+
+	// Reset für die Splide-Liste (verhindert Abstände vom Theme)
+	.splide__list {
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none !important;
+	}
+
+	// Reset für die einzelnen Slides
+	.splide__slide {
+		margin: 0 !important;
+		height: 100%;
+		position: relative;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.slide-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.slide-overlay-inner {
+				text-align: center;
+				color: #fff;
+			}
+		}
+	}
+
+	&.is-fullscreen {
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+	}
+}
