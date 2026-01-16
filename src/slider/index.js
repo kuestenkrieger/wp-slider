@@ -90,7 +90,7 @@ registerBlockType( 'kuestenkrieger/slide', {
 				) }
 				<div className="slide-overlay">
 					<div className="slide-overlay-inner">
-						<RichText.Content tagName="h2" value={ title } />
+						<RichText.Content tagName="h2" className="h1" value={ title } />
 						<RichText.Content tagName="p" value={ description } />
 						{ buttonUrl && (
 							<a href={ buttonUrl } className="slide-cta">

@@ -26,14 +26,18 @@ const init = () => {
 
 	elements.forEach( ( el ) => {
 		const customHeight = el.getAttribute( 'data-height' ) || '500px';
+		const hasOverlay = el.getAttribute( 'data-overlay' ) === 'true';
 
 		new Splide( el, {
 			type   : 'loop',
 			perPage: 1,
-			autoplay: true,
-			arrows: true,
-			pagination: false,
+			autoplay: hasOverlay,
+			arrows: !hasOverlay,
+			pagination: !hasOverlay,
 			height: customHeight, // Hier setzen wir die dynamische Höhe
+			interval: 5000,
+			pauseOnHover: !hasOverlay,
+			speed: 1000,
 		} ).mount();
 
 		el.classList.add( 'is-initialized' );

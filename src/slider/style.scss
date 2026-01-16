@@ -28,7 +28,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: rgba(0,0,0,0.5);
+			background: rgba(0,0,0,0.35);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -39,12 +39,53 @@
 		}
 	}
 
+	.splide[data-overlay="true"] .slide-overlay {
+		display: none;
+	}
+
 	&.is-fullscreen {
-		width: 100vw;
+		width: 100vw !important;
+		height: 100vh;
 		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -50vw;
-		margin-right: -50vw;
+	}
+}
+
+.position-relative {
+	position: relative !important; // Wichtig, damit das Overlay hier ankerst
+	display: block;
+	width: 100%;
+}
+
+.general-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.35);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100; // Höher als die Splide-Controls
+	pointer-events: none; // Damit man den Slider (falls Arrows aktiv) noch bedienen kann
+
+	.general-overlay-inner {
+		max-width: 1000px;
+		text-align: center;
+		color: #fff;
+		pointer-events: auto;
+		h2.decorative-text {
+			white-space: pre-line;
+		}
+
+		p {
+			white-space: pre-line;
+			max-width: 700px;
+			margin: 0 auto 2rem auto;
+			font-size: 1.25rem;
+			@media (min-width: 64rem) {
+				font-size: 1.5rem;
+			}
+		}
 	}
 }

@@ -24,6 +24,22 @@ return array(
 			'height' => array(
 				'type' => 'string',
 				'default' => '500px'
+			),
+			'generalOverlay' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'overlayTitle' => array(
+				'type' => 'string',
+				'default' => 'the art of visual storytelling'
+			),
+			'overlayText' => array(
+				'type' => 'string',
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ante quis tincidunt tincidunt, libero massa tincidunt augue, quis tincidunt dolor justo quis dolor.'
+			),
+			'overlayUrl' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'textdomain' => 'slider',
